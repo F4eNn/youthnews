@@ -4,6 +4,7 @@ const config: Config = {
    content: [
       './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
       './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+      './src/global-components/**/*.{js,ts,jsx,tsx,mdx}',
       './src/app/**/*.{js,ts,jsx,tsx,mdx}',
    ],
    theme: {
@@ -12,7 +13,7 @@ const config: Config = {
          'heading-2': ['2.5rem', '3.5rem'],
          'heading-3': ['1.5rem', '2rem'],
          default: ['1.25rem', '1.875rem'],
-         'btn-size': ['1.25rem', '1.75rem'],
+         'cta-size': ['1.25rem', '1.75rem'],
          'heading-1-mobile': ['2rem', '2.5rem'],
          'heading-2-mobile': ['1.5rem', '2'],
          'heading-3-mobile': ['1.25rem', '1.75rem'],
@@ -22,7 +23,12 @@ const config: Config = {
          primary: '#FACC13',
          'light-gray': '#C7C8C9',
          gray: '#5A5867',
+         'light-dark': '#141414',
          black: '#000000',
+         white: '#ffffff',
+      },
+      borderRadius: {
+         'button-radius': '10px',
       },
    },
    plugins: [],
