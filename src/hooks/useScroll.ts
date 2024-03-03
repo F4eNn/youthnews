@@ -7,8 +7,9 @@ export const useScroll = () => {
    useEffect(() => {
       const handleScroll = () => {
          const currentScrollPosition = window.scrollY;
+         const navHeight = 80;
 
-         if (lastScrollPostion.current > currentScrollPosition) {
+         if (lastScrollPostion.current > currentScrollPosition && currentScrollPosition > navHeight) {
             setIsScrollUp(true);
          } else setIsScrollUp(false);
          lastScrollPostion.current = currentScrollPosition;
