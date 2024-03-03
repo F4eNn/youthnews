@@ -21,8 +21,10 @@ export default function RootLayout({
    children: React.ReactNode;
 }>) {
    return (
-      <html lang='pl'>
-         <body className={`${poppins.className} h-[2000px] bg-[#333]`}>
+      <html
+         lang='pl'
+         className='overscroll-none'>
+         <body className={`${poppins.className} h-[2000px]  bg-[#333]`}>
             <Nav />
             {children}
          </body>
