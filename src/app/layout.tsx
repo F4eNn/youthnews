@@ -1,10 +1,12 @@
 /** @format */
 
-import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
-import './css/globals.css';
 
 import { Nav } from '@/global-components/nav/Nav';
+
+import type { Metadata } from 'next';
+
+import './css/globals.css';
 
 const poppins = Poppins({ weight: ['300', '400', '500', '500', '700', '800', '900'], subsets: ['latin'] });
 
@@ -19,8 +21,10 @@ export default function RootLayout({
    children: React.ReactNode;
 }>) {
    return (
-      <html lang='pl'>
-         <body className={`${poppins.className} h-[2000px] bg-[#333]`}>
+      <html
+         lang='pl'
+         className='overscroll-none'>
+         <body className={`${poppins.className} h-[2000px]  bg-[#333]`}>
             <Nav />
             {children}
          </body>

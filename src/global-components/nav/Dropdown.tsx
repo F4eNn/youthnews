@@ -1,5 +1,5 @@
-import { ForwardedRef, forwardRef, useState } from 'react';
 import Link from 'next/link';
+import { ForwardedRef, forwardRef, useState } from 'react';
 
 import { dropdownItems } from '@/constants/navigation-paths';
 

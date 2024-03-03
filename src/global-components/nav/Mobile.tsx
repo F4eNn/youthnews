@@ -1,14 +1,14 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
 import { Sling as Hamburger } from 'hamburger-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { navItems } from '@/constants/navigation-paths';
 
+import { Dropdown } from './Dropdown';
 import Logo from '../../../public/logo.png';
 import { Button } from '../Button';
-import { Dropdown } from './Dropdown';
 
 export const Mobile = () => {
    const [isOpen, setIsOpen] = useState(false);

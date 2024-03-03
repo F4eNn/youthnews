@@ -54,6 +54,8 @@ export const navigation = {
    },
 } as const satisfies Record<PropertyKey, NavItem>;
 
-export const navItems = Object.values(navigation).filter((_, idx) => idx <= 4 && idx > 0);
+const numberOfVisibleItems = 4;
 
-export const dropdownItems = Object.values(navigation).filter((_, idx) => idx > 4);
+export const navItems = Object.values(navigation).filter((_, idx) => idx <= numberOfVisibleItems && idx > 0);
+
+export const dropdownItems = Object.values(navigation).filter((_, idx) => idx > numberOfVisibleItems);

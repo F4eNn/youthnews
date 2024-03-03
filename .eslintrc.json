@@ -1,16 +1,47 @@
 {
-   "extends": "next/core-web-vitals",
-   "plugins": ["import-order"],
+   "root": true,
+   "extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended"],
+   "plugins": ["import-order", "@typescript-eslint"],
    "rules": {
-      "no-duplicate-imports": "error",
+      "@typescript-eslint/naming-convention": [
+         "error",
+         {
+            "selector": "default",
+            "format": ["StrictPascalCase", "strictCamelCase"],
+            "leadingUnderscore": "forbid"
+         },
+         { "selector": "variable", "format": ["strictCamelCase", "UPPER_CASE", "StrictPascalCase"] },
+         { "selector": "objectLiteralProperty", "format": null },
+         { "selector": "enumMember", "format": ["UPPER_CASE"] },
+         { "selector": "typeParameter", "format": ["StrictPascalCase"] },
+         { "selector": "typeAlias", "format": ["StrictPascalCase"] },
+         { "selector": "class", "format": ["StrictPascalCase"] },
+         { "selector": "enum", "format": ["StrictPascalCase"] },
+         { "selector": "parameter", "format": ["strictCamelCase"], "leadingUnderscore": "allow" },
+         {
+            "selector": "property",
+            "format": ["strictCamelCase", "snake_case", "StrictPascalCase"]
+         },
+         {
+            "selector": "interface",
+            "format": ["StrictPascalCase"],
+            "custom": { "regex": "^I[A-Z]", "match": false }
+         }
+      ],
+      "tailwindcss/no-custom-classname": [
+         "error",
+         {
+            "config": "tailwind.config.ts",
+            "cssFiles": ["**/*.css"],
+            "cssFilesRefreshRate": 7
+         }
+      ],
       "no-console": [
          "warn",
          {
             "allow": ["error"]
          }
       ],
-      "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
-      "no-unused-expressions": "warn",
       "quotes": [
          "error",
          "single",
@@ -19,16 +50,49 @@
             "allowTemplateLiterals": true
          }
       ],
+      "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+      "no-var": "error",
+      "no-empty-function": "warn",
+      "no-lonely-if": "error",
+      "no-nested-ternary": "error",
+      "prefer-const": "error",
+      "no-await-in-loop": "error",
+      "no-dupe-args": "error",
+      "no-duplicate-case": "error",
+      "no-self-assign": "error",
+      "eqeqeq": "error",
+      "max-depth": ["error", 3],
+      "max-params": ["error", 4],
+      "no-alert": "warn",
+      "no-extra-boolean-cast": "error",
+      "no-magic-numbers": ["error", { "ignoreDefaultValues": true, "detectObjects": true, "ignore": [0, 1] }],
+      "no-unneeded-ternary": "error",
+      "no-useless-concat": "error",
+      "no-return-await": "error",
+      "require-await": "error",
+      "prefer-template": "error",
+      "prefer-destructuring": "warn",
+      "no-multi-assign": "error",
+      "no-unused-expressions": "warn",
+      "no-duplicate-imports": "error",
       "object-shorthand": "error",
       "react-hooks/exhaustive-deps": "error",
       "no-multi-spaces": "warn",
       "no-else-return": "error",
       "no-empty": "error",
       "import/order": [
-         "error",
+         "warn",
          {
+            "groups": ["builtin", "external", "internal", "type", ["parent", "sibling"], "index", "object"],
             "newlines-between": "always",
-            "groups": [["builtin"], ["external"], ["internal"], ["parent", "sibling", "index"]]
+            "alphabetize": { "order": "asc", "caseInsensitive": true },
+            "warnOnUnassignedImports": true,
+            "pathGroups": [
+               {
+                  "pattern": "@/**",
+                  "group": "internal"
+               }
+            ]
          }
       ]
    }
