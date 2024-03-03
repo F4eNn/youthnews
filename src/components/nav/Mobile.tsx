@@ -8,7 +8,7 @@ import { navItems } from '@/constants/navigation-paths';
 
 import { Dropdown } from './Dropdown';
 import Logo from '../../../public/logo.png';
-import { Button } from '../Button';
+import { Button } from '@/global-components/Button';
 
 export const Mobile = () => {
    const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +43,7 @@ export const Mobile = () => {
    };
 
    return (
-      <div className='p-3 '>
+      <div className='p-3 md:hidden'>
          <div className='relative z-50'>
             <Image
                src={Logo}
@@ -69,17 +69,27 @@ export const Mobile = () => {
             <div className='fixed inset-0 flex w-full flex-col justify-between  bg-light-dark px-4'>
                <ul className=' flex flex-1 flex-col items-center gap-2.5 pt-32 text-white'>
                   {navItems.map(({ label, path }) => (
-                     <li key={path} className='flex w-full text-cta-size font-medium'>
-                        <Link href='/' className='w-full p-2.5 text-center'>
+                     <li
+                        key={path}
+                        className='flex w-full text-cta-size font-medium'>
+                        <Link
+                           href='/'
+                           className='w-full p-2.5 text-center'>
                            {label}
                         </Link>
                      </li>
                   ))}
                   <li>
-                     <Dropdown dropdownHeight={dropdownHeight} ref={dropdownRef} />
+                     <Dropdown
+                        dropdownHeight={dropdownHeight}
+                        ref={dropdownRef}
+                     />
                   </li>
                </ul>
-               <Button ref={btnRef} size={'full-width'} className='mb-8 mt-auto bg-primary p-4'>
+               <Button
+                  ref={btnRef}
+                  size={'full-width'}
+                  className='mb-8 mt-auto bg-primary p-4'>
                   Napisz do nas
                </Button>
             </div>

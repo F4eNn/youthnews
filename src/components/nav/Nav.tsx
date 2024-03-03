@@ -4,6 +4,7 @@ import { twJoin } from 'tailwind-merge';
 import { useScroll } from '@/hooks/useScroll';
 
 import { Mobile } from './Mobile';
+import { Desktop } from './Desktop';
 
 export const Nav = () => {
    const { isScrollDown, isScrollUp, lastScrollPosition } = useScroll();
@@ -17,6 +18,7 @@ export const Nav = () => {
             lastScrollPosition.current > navHeight && 'bg-light-dark',
          )}>
          <Mobile />
+         <Desktop />
       </nav>
    );
 };
