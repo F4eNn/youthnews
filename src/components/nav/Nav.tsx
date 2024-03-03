@@ -3,8 +3,9 @@ import { twJoin } from 'tailwind-merge';
 
 import { useScroll } from '@/hooks/useScroll';
 
-import { Mobile } from './Mobile';
+import { Wrapper } from './components/Wrapper';
 import { Desktop } from './Desktop';
+import { Mobile } from './Mobile';
 
 export const Nav = () => {
    const { isScrollDown, isScrollUp, lastScrollPosition } = useScroll();
@@ -18,7 +19,9 @@ export const Nav = () => {
             lastScrollPosition.current > navHeight && 'bg-light-dark',
          )}>
          <Mobile />
-         <Desktop />
+         <Wrapper>
+            <Desktop />
+         </Wrapper>
       </nav>
    );
 };
