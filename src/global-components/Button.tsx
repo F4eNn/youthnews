@@ -1,15 +1,15 @@
-import { ComponentProps, ForwardedRef, forwardRef } from 'react';
 import { VariantProps, cva } from 'class-variance-authority';
+import { ComponentProps, ForwardedRef, forwardRef } from 'react';
 
 import { cn } from '@/utils/cn';
 
 const buttonVariants = cva(
-   'active:scale-95 transitin-all  text-lig duration-300 text-cta-size font-medium rounded-button-radius',
+   'rounded-button-radius text-cta-size   font-medium transition-all duration-300 active:scale-95',
    {
       variants: {
          variant: {
             primary: 'bg-primary',
-            dropdown: 'flex justify-center items-center gap-2.5',
+            dropdown: 'flex items-center justify-center gap-2.5',
          },
          size: { 'full-width': 'w-full p-4', default: 'w-max p-4', dropdown: 'p-2.5' },
       },

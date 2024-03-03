@@ -1,9 +1,8 @@
 {
-	"arrowParens": "avoid",
-	"jsxSingleQuote": true,
-	"semi": true,
-	"singleQuote": true,
-	"tabWidth": 3,
-	"printWidth": 120,
-	"plugins": ["prettier-plugin-tailwindcss"]
+   "arrowParens": "avoid",
+   "jsxSingleQuote": true,
+   "semi": true,
+   "singleQuote": false,
+   "tabWidth": 3,
+   "printWidth": 120
 }
