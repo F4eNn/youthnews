@@ -2,10 +2,6 @@ import { Poppins } from 'next/font/google';
 
 import { Nav } from '@/components/nav/Nav';
 
-import { Poppins } from 'next/font/google';
-
-import { Nav } from '@/global-components/nav/Nav';
-
 import type { Metadata } from 'next';
 
 import './css/globals.css';
@@ -23,9 +19,7 @@ export default function RootLayout({
    children: React.ReactNode;
 }>) {
    return (
-      <html
-         lang='pl'
-         className='overscroll-none'>
+      <html lang='pl' className='overscroll-none'>
          <body className={`${poppins.className} h-[2000px]  bg-[#333]`}>
             <Nav />
             {children}
