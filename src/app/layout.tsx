@@ -19,7 +19,9 @@ export default function RootLayout({
    children: React.ReactNode;
 }>) {
    return (
-      <html lang='pl' className='overscroll-none'>
+      <html
+         lang='pl'
+         className='overscroll-none'>
          <body className={`${poppins.className} h-[2000px]  bg-[#333]`}>
             <Nav />
             {children}
