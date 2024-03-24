@@ -9,9 +9,13 @@ const buttonVariants = cva(
       variants: {
          variant: {
             primary: 'bg-primary text-black',
-            dropdown: 'flex items-center  justify-center gap-2.5',
+            dropdown: 'flex items-center justify-center gap-2.5  ',
          },
-         size: { 'full-width': 'w-full p-4', default: 'p-4 ', dropdown: 'p-2.5' },
+         size: {
+            'full-width': 'w-full p-4',
+            default: 'p-4 px-8 ',
+            'dropdown-size': 'py-2.5 text-mobile lg:text-cta-size',
+         },
       },
       defaultVariants: { variant: 'primary', size: 'default' },
    },

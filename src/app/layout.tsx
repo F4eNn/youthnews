@@ -1,12 +1,10 @@
-/** @format */
-
 import { Poppins } from 'next/font/google';
 
-import { Nav } from '@/global-components/nav/Nav';
+import { Nav } from '@/components/nav/Nav';
 
 import type { Metadata } from 'next';
 
-import './css/globals.css';
+import './css/app.css';
 
 const poppins = Poppins({ weight: ['300', '400', '500', '500', '700', '800', '900'], subsets: ['latin'] });
 

@@ -24,11 +24,11 @@ export const Logo = ({ setDispatch }: LogoProps) => {
          className='cursor-pointer'>
          <Image
             src={LogoImg}
-            width={56}
-            height={56}
+            width={81}
+            height={81}
             placeholder='blur'
             alt='Logo organizacji Youthnews'
-            className='mx-auto'
+            className='mx-auto min-w-max'
          />
       </Link>
    );
