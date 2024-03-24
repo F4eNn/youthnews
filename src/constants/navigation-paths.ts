@@ -49,13 +49,16 @@ export const navigation = {
       path: '/kontakt',
    },
    articles: {
-      label: 'Starsze Artykuły',
+      label: 'Starsze artykuły',
       path: '/artykuly',
    },
 } as const satisfies Record<PropertyKey, NavItem>;
 
 const numberOfVisibleItems = 4;
 
-export const navItems = Object.values(navigation).filter((_, idx) => idx <= numberOfVisibleItems && idx > 0);
+export const getNavItems = (amount: number = 4) => {
+   const navItems = Object.values(navigation).filter((_, idx) => idx <= amount && idx > 0);
+   return navItems;
+};
 
 export const dropdownItems = Object.values(navigation).filter((_, idx) => idx > numberOfVisibleItems);

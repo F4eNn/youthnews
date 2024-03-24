@@ -1,3 +1,5 @@
+import { extendTailwindMerge } from 'tailwind-merge';
+
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -17,7 +19,7 @@ const config: Config = {
          'heading-1-mobile': ['2rem', '2.5rem'],
          'heading-2-mobile': ['1.5rem', '2'],
          'heading-3-mobile': ['1.25rem', '1.75rem'],
-         'default-mobile': ['1', '1.5'],
+         mobile: ['1', '1.5'],
       },
       colors: {
          primary: '#FACC13',
@@ -34,3 +36,11 @@ const config: Config = {
    plugins: [],
 };
 export default config;
+
+export const twMerge = extendTailwindMerge({
+   override: {
+      classGroups: {
+         'font-size': Object.keys(config.theme!.fontSize!).map(key => `text-${key}`),
+      },
+   },
+});

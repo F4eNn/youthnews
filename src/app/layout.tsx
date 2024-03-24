@@ -1,8 +1,6 @@
-/** @format */
-
 import { Poppins } from 'next/font/google';
 
-import { Nav } from '@/global-components/nav/Nav';
+import { Nav } from '@/components/nav/Nav';
 
 import type { Metadata } from 'next';
 
